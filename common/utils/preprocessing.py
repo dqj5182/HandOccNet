@@ -6,6 +6,7 @@ import math
 import torchvision
 
 def load_img(path, order='RGB'):
+    path = path.replace('.png', '.jpg')
     img = cv2.imread(path, cv2.IMREAD_COLOR | cv2.IMREAD_IGNORE_ORIENTATION)
     if not isinstance(img, np.ndarray):
         raise IOError("Fail to read %s" % path)
